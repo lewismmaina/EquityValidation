@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/grad_bg"
+    tools:context="com.example.equityvalidation.SignatureActivity">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imgView_logo"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/equitylogo" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="Signature"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+        <ProgressBar
+            android:id="@+id/myProgressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:visibility="gone" />
+    <Button
+        android:id="@+id/redraw_button"
+        android:layout_gravity="center"
+        android:text="Redraw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#aaa"
+        android:textColor="@android:color/white" />
+
+    <android.gesture.GestureOverlayView
+        android:id="@+id/sign_pad"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/redraw_button"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        android:fadeEnabled="false"
+        android:fadeOffset="60000"
+        android:gestureColor="@color/ColorPrimary"
+        android:uncertainGestureColor="@android:color/holo_red_light"
+        android:gestureStrokeLengthThreshold="0.1"
+        android:gestureStrokeType="multiple"
+        android:orientation="vertical" >
+    </android.gesture.GestureOverlayView>
+    <CheckBox android:id="@+id/checkbox_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:text="I do Confirm that this account meets all the necessary requirements "
+        android:onClick="onCheckboxClicked"/>
+    <Button
+        android:id="@+id/save_button"
+        android:layout_below="@id/sign_pad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#f05924"
+        android:text="Save"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Abort the process?"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#f05924"
+        android:text="Cancel AC Opening"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
